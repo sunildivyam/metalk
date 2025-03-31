@@ -10,13 +10,13 @@ interface RecordVoiceProps {
   onStop?: (recordedBlob: Blob) => void;
   onCancel?: () => void;
 }
-const RECORD_DURATION = 5;
+const RECORD_DURATION = 60;
 
 const RecordVoice: React.FC<RecordVoiceProps> = ({ autoStart, onStart, onStop, onCancel }) => {
   const [recording, setRecording] = useState(false);
   const [cancelled, setCancelled] = useState(false);
   const [progress, setProgress] = useState(0);
-  const [timer, setTimer] = useState(0);
+  const [timer, setTimer] = useState<any>(0);
 
   const cancelledRef = useRef(cancelled);
   const progressRef = useRef(progress);
@@ -87,7 +87,7 @@ const RecordVoice: React.FC<RecordVoiceProps> = ({ autoStart, onStart, onStop, o
   return (
     <Box>
       <ReactMic
-        visualSetting="frequencyBars"
+        visualSetting="sinewave"
         record={recording}
         className="sound-wave"
         onStop={handleStop}

@@ -1,4 +1,4 @@
-import { StrictMode } from 'react'
+import { StrictMode, } from 'react'
 import { createRoot } from 'react-dom/client'
 
 import '@fontsource/roboto/300.css';
@@ -9,10 +9,13 @@ import './index.css'
 
 import App from './App.tsx'
 import { CssBaseline } from '@mui/material';
+import { AppProvider } from './lib/AppContext.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <CssBaseline />
-    <App />
+    <AppProvider>
+      <App />
+    </AppProvider>
   </StrictMode>
 )

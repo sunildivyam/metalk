@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "globaldew-tech"
+  },
+  "targets": {
+    "globaldew-tech": {
+      "hosting": {
+        "meribaat": [
+          "meribaat"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
